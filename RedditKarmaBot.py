@@ -38,7 +38,7 @@ Points2Go = target_points - total_points
 
 print("Your current karma is: " + str(total_points) + " & you need " + str(Points2Go) + " More Points")
 
-Current_title=redditor1.subreddit["title"])
+Current_title = reddit.user.me(use_cache=False).subreddit.title
 newtitle = str(Points2Go) + " more more karma to go"
 
 if newtitle <> Current_title:
