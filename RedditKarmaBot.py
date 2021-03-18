@@ -45,4 +45,6 @@ if newtitle <> Current_title:
     #edit the display name
     reddit.user.me().subreddit.mod.update(title=newtitle)
     print("Name has been updated, New Title: " + reddit.user.me(use_cache=False).subreddit.title)
-else: exit()
+else: 
+    print("No change needed")
+    exit()
