@@ -38,10 +38,10 @@ Points2Go = target_points - total_points
 
 print("Your current karma is: " + str(total_points) + " & you need " + str(Points2Go) + " More Points")
 
-Current_title = reddit.user.me(use_cache=False).subreddit.title
+Current_title = str(reddit.user.me(use_cache=False).subreddit.title)
 newtitle = str(Points2Go) + " more more karma to go"
 
-if newtitle <> Current_title:
+if newtitle != Current_title:
     #edit the display name
     reddit.user.me().subreddit.mod.update(title=newtitle)
     print("Name has been updated, New Title: " + reddit.user.me(use_cache=False).subreddit.title)
