@@ -17,10 +17,10 @@ user_agent = "This is a reddit bot to update display name automatically based on
 
 # creating an authorized reddit instance 
 reddit = praw.Reddit(client_id = client_id,  
-                     client_secret = client_secret,  
-                     username = username,  
-                     password = password, 
-                     user_agent = user_agent)  
+                    client_secret = client_secret,  
+                    username = username,  
+                    password = password, 
+                    user_agent = user_agent)  
 
 
 
@@ -38,10 +38,11 @@ Points2Go = target_points - total_points
 
 print("Your current karma is: " + str(total_points) + " & you need " + str(Points2Go) + " More Points")
 
+Current_title=redditor1.subreddit["title"])
 newtitle = str(Points2Go) + " more more karma to go"
 
-#edit the display name
-reddit.user.me().subreddit.mod.update(title=newtitle)
-print("Name has been updated, New Title: " + reddit.user.me(use_cache=False).subreddit.title)
-
-exit()
+if newtitle <> Current_title:
+    #edit the display name
+    reddit.user.me().subreddit.mod.update(title=newtitle)
+    print("Name has been updated, New Title: " + reddit.user.me(use_cache=False).subreddit.title)
+else: exit()
