@@ -4,7 +4,7 @@ from os import environ
 import praw
 
 #Targets
-target_points = environ["int(69420)"]
+target_points = environ["target_points"]
 
 
 # Creds 
