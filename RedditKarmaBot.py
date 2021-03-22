@@ -4,8 +4,7 @@ from os import environ
 import praw
 
 #Targets
-target_points = int(69420)
-username = 'Moamr96'
+target_points = environ["int(69420)"]
 
 
 # Creds 
@@ -45,6 +44,7 @@ if newtitle != Current_title:
     #edit the display name
     reddit.user.me().subreddit.mod.update(title=newtitle)
     print("Name has been updated, New Title: " + reddit.user.me(use_cache=False).subreddit.title)
+    exit()
 else: 
     print("No change needed")
     exit()
